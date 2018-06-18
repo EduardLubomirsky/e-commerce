@@ -1,0 +1,527 @@
+//@import reset-css.css
+body
+	margin: 0
+	padding: 0
+	font-family: 'Roboto', sans-serif
+	font-size: 14px
+ul
+	list-style: none
+	margin: 0
+	padding: 0
+a
+	text-decoration: none
+	color: black
+.container
+	max-width: 1180px
+	letter-spacing: 0.3px
+	padding: 
+		right: 10px
+		left: 10px
+	margin:
+		right: auto
+		left: auto
+.container.hidden
+	overflow: hidden
+.header
+	font-family: 'Open Sans'
+	font-weight: 700
+	&-top
+		display: flex
+		justify-content: space-between
+		margin-bottom: 20px
+		line-height: 70px
+		.logo, .logo-mobile
+			font-size: 30px
+		.logo-mobile
+			display: none
+		.position-right
+			font-weight: 400
+			font-size: 12px
+			.email
+				vertical-align: top
+			.sign-up
+				margin-right: 27px
+				vertical-align: top
+			.bag
+				position: relative
+				vertical-align: top
+				margin-right: 5px
+			.bag::before
+				content: ''
+				position: absolute
+				display: block
+				top: 2px
+				left: -20px
+				width: 12px
+				height: 12px
+				background: url('../img/ico_bag.png') no-repeat center
+			.hamburger
+				cursor: pointer
+				display: none
+				position: relative
+				width: 54px
+				height: 100%
+				border-left: 1px solid #ccc
+				span 
+					display: block
+					position: absolute
+					width: 14px
+					height: 2px
+					background: black
+					transition: .2s
+				span:nth-child(1)
+					top: 30px
+					left: 22px
+					transform-origin: left center
+				span:nth-child(2)
+					top: 34px
+					left: 22px
+					opacity: 1
+				span:nth-child(3)
+					top: 38px
+					left: 22px	
+					transform-origin: left center
+			.hamburger.open
+				border-left: 1px solid transparent
+				span
+					background-color: #f14a58
+				span:nth-child(1)
+					transform: rotate(45deg)
+					top: 29px
+				span:nth-child(2)
+					width: 0%
+				span:nth-child(3)
+					transform: rotate(-45deg)
+					top: 39px
+					
+	&-bottom
+		margin-bottom: 13px
+		.menu
+			width: 100%
+			&-links
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-between
+				font-size: 13px
+				.active a
+					color: #f14a58
+				& li:hover a
+					color: #f14a58
+		.search
+			display: block 
+			position: relative
+			box-sizing: border-box
+			& [type="search"]
+				border: 0
+				width: 119px
+				height: 23px
+				padding: 0px 0px 8px 0px
+				border-bottom: 2px solid #e5e5e5
+				width: 100%
+				margin: 0
+			& [type="submit"]
+				position: absolute
+				top: 2px
+				right: 0px
+				border: 0
+				width: 12px
+				height: 12px
+				background: url('../img/ico.png') no-repeat
+	.filter-wrapper 
+		width: 100%
+		border-top: 1px solid #ccc
+		border-bottom: 1px solid #ccc
+		.filter-close-btn
+			display: none
+		.toolbar
+			display: none
+			white-space: nowrap
+		.filter
+			display: flex
+			li.open	
+				border-left: 1px solid #ccc
+				border-right: 1px solid #ccc
+				ul 
+					border-top: 1px solid transparent
+			&>li.selected
+				font-size: 12px
+				line-height: 45px
+				.selected-item-name
+					display: block
+					color: #f14a58
+					font-size: 16px
+			li
+				border-left: 1px solid transparent
+				border-right: 1px solid transparent
+				position: relative
+				cursor: pointer
+				flex-basis: 200px
+				line-height: 64px
+				padding-left: 15px
+				&:nth-child(1)
+					padding-left: 0
+				svg
+					position: absolute
+					right: 10px
+					top: 40%
+					font-size: 10px
+				span
+					display: none
+					position: absolute
+					top: 20px
+				ul
+					position: absolute
+					background-color: white
+					border: 1px solid #ccc
+					width: 100%
+					top: 65px
+					left: -1px
+					display: none
+					li
+						line-height: 32px
+						font-size: 14px
+					li.selected
+						color: #f14a58
+					li:nth-child(1)
+						padding-left: 15px
+					li:hover
+						color: #f14a58
+				&.open ul
+					display: block
+
+.main-content
+	.slider
+		width: 100%
+		height: auto
+		div
+			height: auto
+			width: 100%
+			z-index: 0
+			img
+				width: 100%
+		.slick-prev, .slick-next
+			position: absolute
+			width: 35px
+			height: 110px
+			z-index: 1
+			background: #f14a58
+		.slick-prev
+			left: 0
+		.slick-next
+			right: 0
+		.slick-dots
+			background-color: #f7f7f7
+	.banners
+		width: 100%
+		height: 386px
+		margin-top: 80px
+		.banner
+			background-repeat: no-repeat
+			background-size: contain
+			position: relative
+			border: 1px solid #e5e5e5
+			box-sizing: border-box
+			width: 50%
+			height: 100%
+			float: left
+			&-info
+				display: flex
+				position: absolute
+				top: 50px
+				right: 40px
+				flex-direction: column
+				width: 180px
+				
+				align-items: center
+				justify-content: center
+			&-title
+				font-family: 'Open Sans'
+				font-size: 28px
+				font-weight: 700
+				margin-bottom: 10px
+			&-category
+				font-style: italic
+				font-size: 16px
+				color: #757575
+		.left
+			background-image: url('../img/photo.png')
+			background-position: left bottom
+		.right
+			border-left-color: transparent
+			background-image: url('../img/photo1.png')
+			background-position: left bottom
+	.banners-bottom
+		display: flex
+		height: 385px
+		.banner
+			position: relative
+			&:hover::before
+				content: ""
+				position: absolute
+				display: block
+				width: 100%
+				height: 100%
+				background: rgba(112, 118, 127, .4)
+			.info
+				display: none
+				font-family: "Open Sans"
+				width: 100%
+				position: absolute
+				font-size: 28px
+				font-weight: bold
+				text-align: center
+				.title
+					color: white
+				.description
+					font-family: "Times New Roman"
+					font-size: 16px
+					font-style: italic
+					color: white
+
+		img
+			display: block
+			width: 100%
+			height: 385px
+			object-fit: cover
+		.left
+			width: 50%
+			&:hover .info
+				display: block
+				width: 50%
+				top: 20px
+				right: 0
+
+		.middle
+			width: 25%
+			&:hover .info
+				display: block
+				bottom: 20px
+		.right
+			width: 25%
+			&:hover .info
+				display: block
+				bottom: 20px
+				.title
+					color: #f14a58
+				
+	.products-list	
+		.items	
+			margin-right: -5%
+			font-size: 0
+			letter-spacing: -.36em
+			img
+				width: 100%
+				height: auto
+				margin-bottom: 50px
+			.item
+				margin-right: 5%
+				margin-top: 60px
+				display: inline-block
+				vertical-align: top
+				font-family: 'Roboto'
+				width: 20%
+				font-size: 16px
+				text-align: center
+				.name
+					display: block
+					text-align: center
+					line-height: 24px
+					font-weight: 700
+					margin-bottom: 14px
+				.price
+					display: block
+				
+
+		.ad
+			text-align: center
+			h2
+				margin: 50px 0 0 0
+				font-size: 24px
+				font-family: 'Open Sans'
+				font-weight: bold
+				line-height: 34px
+			span
+				display: block
+				text-align: center
+				margin: 20px 0 0 0
+				font-size: 16px
+				font-family: 'Times New Roman'
+				font-style: italic
+			strong
+				color: #f14a58
+	.arrivals
+		h2
+			text-align: center
+			font-family: 'Open Sans'
+			font-weight: 700
+			font-size: 50px
+			margin: 
+				top: 140px
+				bottom: 100px		
+		.items
+			display: flex
+			justify-content: space-between
+			img
+				width: 100%
+				height: auto
+				margin-bottom: 50px
+			.item a
+				display: flex
+				flex-direction: column
+				font-family: 'Roboto'
+				align-items: center
+				max-width: 240px
+				margin-right: 80px
+				&:last-child
+					margin-right: 0
+				.name
+					text-align: center
+					line-height: 24px
+					font-size: 14px
+					font-weight: 700
+					margin-bottom: 14px
+	.button
+		display: block
+		text-align: center
+		line-height: 75px
+		box-sizing: border-box
+		font-family: 'Open Sans'
+		font-weight: 700
+		font-size: 24px
+		margin: 0 auto
+		margin-top: 100px
+		margin-bottom: 80px
+		max-width: 340px
+		height: 75px
+		border: 1px solid #e5e5e5
+	.back
+		font-family: 'Open Sans'
+		font-weight: bold
+		border-top: 1px solid #e5e5e5
+		border-bottom: 1px solid #e5e5e5
+		height: 64px
+		line-height: 64px
+		padding-left: 25px
+	.section-group
+		display: flex
+		margin-bottom: 60px
+		.gallery
+			box-sizing: border-box
+			width: 50%
+			&-main img
+				display: block
+				width: 100%
+			&-photos
+				display: flex
+				width: 100%
+			& .gallery-photo img
+				width: 100% 
+		.item
+			box-sizing: border-box
+			width: 50%
+			font-family: 'Roboto'
+			padding: 10px 40px 0 40px
+			&-title
+				font-size: 26px
+				font-weight: 700
+				line-height: 30px
+			&-description
+				font-family: 'Times New Roman'
+				font-size: 16px 
+				font-style: italic
+				line-height: 30px
+			&-price
+				display: block
+				font-size: 25px
+				line-height: 65px
+			&-filter-group
+				display: flex
+				margin-bottom: 20px
+			& h2
+				font-size: 12px
+				width: 80px
+				line-height: 36px
+			&-size, &-color
+				font-family: 'Open Sans'
+				font-size: 14px 
+				font-weight: 700
+			&-size li, &-color li
+				display: inline-block
+				margin-right: 10px
+				padding: 10px
+			&-size .active, &-color .active
+				border: 1px solid #e5e5e5
+			&-add-to-bag
+				margin-top: 40px
+.footer
+	box-sizing: border-box
+	font-family: 'Open Sans'
+	font-size: 14px
+	width: 100%
+
+	border-top: 1px solid #ccc
+	&-top
+		display: flex
+		justify-content: space-around
+		line-height: 40px
+	.column 
+		h3
+			font-weight: 700
+			font-size: 16px
+	.inline-mobile
+		flex-grow: 2
+		display: flex
+		justify-content: space-around
+	.questions
+		border-left: 1px solid #ccc
+		margin-left: 59px
+		position: relative
+		flex-grow: 2
+	.inline
+		display: flex
+		justify-content: space-around
+
+	.about-us
+		position: absolute
+		font-family: 'Times New Roman'
+		font-style: italic
+		font-size: 16px
+		max-width: 325px
+		line-height: 30px
+		p
+			color: #757575
+		.social li
+			display: inline-block
+			margin-right: 25px			
+	&-bottom
+		height: 80px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		font-weight: 700
+
+		.share
+			position: relative
+			&::before
+				content: ""
+				position: absolute
+				right: -10px
+				border: 7px solid transparent
+				border-right: 8px solid #ccc
+				width: 0
+				height: 0
+			&::after
+				content: "1437"
+				position: absolute
+				left: 45px
+				top: -5px
+				background: #ccc
+				padding: 5px
+   
+		.menu-settings 
+			li
+				float: left
+				margin-right: 35px
+				&:last-child
+					margin-right: 0
+
