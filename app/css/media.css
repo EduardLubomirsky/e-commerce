@@ -1,7 +1,10 @@
 @media screen and (max-width: 768px) {
   .header .header-bottom .menu-links {
     position: relative;
-    padding-right: 15px; }
+    padding-right: 15px;
+    font-size: 12px; }
+    .header .header-bottom .menu-links li {
+      margin-right: 25px; }
   .header .header-bottom .search {
     position: absolute;
     right: 0px; }
@@ -198,6 +201,11 @@
           display: inline-block; }
       .main-content .section-group .item-size, .main-content .section-group .item-color {
         display: inline-block; }
+  .main-content .title-page {
+    font-size: 20px; }
+  .main-content .bag-list img {
+    width: 145px;
+    height: 205px; }
   .footer-top {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -253,6 +261,7 @@
       -o-transition: .3s;
       transition: .3s; }
     .header-bottom .menu.open {
+      width: 100%;
       z-index: 1000; }
     .header-bottom .menu-links {
       width: 100%;
@@ -346,6 +355,19 @@
       display: inline-block;
       width: 100%;
       text-align: left; }
+  .main-content .bag-list li {
+    width: 100%; }
+    .main-content .bag-list li img {
+      width: 158px;
+      height: 223px; }
+    .main-content .bag-list li h2 {
+      font-size: 12px;
+      line-height: 20px; }
+    .main-content .bag-list li .item-price {
+      font-size: 14px; }
+    .main-content .bag-list li span {
+      font-size: 10px;
+      line-height: 20px; }
   .footer-top {
     display: block; }
   .footer .inline {

@@ -11,8 +11,11 @@ ul
 a
 	text-decoration: none
 	color: black
+img
+	width: 100%
+	height: auto
 .container
-	max-width: 1180px
+	max-width: 1200px
 	letter-spacing: 0.3px
 	padding: 
 		right: 10px
@@ -34,7 +37,7 @@ a
 			font-size: 30px
 		.logo-mobile
 			display: none
-		.position-right
+		.user-menu
 			font-weight: 400
 			font-size: 12px
 			.email
@@ -95,14 +98,16 @@ a
 					top: 39px
 					
 	&-bottom
+		display: flex
 		margin-bottom: 13px
 		.menu
-			width: 100%
+			max-width: 1060px
 			&-links
 				display: flex
 				flex-wrap: wrap
-				justify-content: space-between
 				font-size: 13px
+				li
+					margin-right: 65px
 				.active a
 					color: #f14a58
 				& li:hover a
@@ -111,6 +116,7 @@ a
 			display: block 
 			position: relative
 			box-sizing: border-box
+			flex-shrink: 0
 			& [type="search"]
 				border: 0
 				width: 119px
@@ -453,6 +459,53 @@ a
 				border: 1px solid #e5e5e5
 			&-add-to-bag
 				margin-top: 40px
+	.title-page
+		font-family: 'Open Sans'
+		font-size: 26px
+		line-height: 65px
+		border-top: 1px solid #e5e5e5
+		border-bottom: 1px solid #e5e5e5
+	.bag-list
+		display: flex 
+		flex-wrap: wrap
+		li
+			display: flex
+			flex-shrink: 0
+			width: 50%
+			margin-bottom: 90px
+		img
+			flex-shrink: 0
+			width: 240px
+			height: 340px
+			margin-right: 25px
+		.item-info-column
+			display: flex
+			flex-direction: column
+			flex-shrink: 1
+			width: 100%
+		h2
+			font-size: 14px
+			line-height: 24px
+			margin: 10px 0 0 0;
+		.item-price
+			font-size: 17px
+			font-weight: bold
+			line-height: 65px
+		span
+			font-size: 12px
+			line-height: 24px
+		.item-remove
+			padding: 0
+			margin: 0
+			border: 0
+			background: none
+			text-align: left
+			font-family: 'Open Sans'
+			font-size: 13px
+			font-weight: bold
+			line-height: 65px
+			color: #f14a58
+			cursor: pointer
 .footer
 	box-sizing: border-box
 	font-family: 'Open Sans'

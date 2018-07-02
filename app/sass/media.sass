@@ -1,9 +1,13 @@
 @media screen and (max-width: 768px)
 	.header
 		.header-bottom
+			max-width: 
 			.menu-links
 				position: relative
 				padding-right: 15px
+				font-size: 12px
+				li
+					margin-right: 25px
 			.search
 				position: absolute
 				right: 0px
@@ -178,7 +182,11 @@
 						display: inline-block
 				&-size, &-color
 					display: inline-block
-
+		.title-page
+			font-size: 20px
+		.bag-list img
+			width: 145px
+			height: 205px
 	.footer-top
 		justify-content: space-between
 		.border
@@ -225,6 +233,7 @@
 			background-color: white
 			transition: .3s;
 		.menu.open
+			width: 100%
 			z-index: 1000
 		& .menu-links
 			width: 100%
@@ -308,6 +317,19 @@
 					display: inline-block
 					width: 100%
 					text-align: left
+		.bag-list li
+			width: 100%
+			img
+				width: 158px
+				height: 223px
+			h2
+				font-size: 12px
+				line-height: 20px
+			.item-price
+				font-size: 14px
+			span
+				font-size: 10px
+				line-height: 20px
 	.footer
 		&-top
 			display: block

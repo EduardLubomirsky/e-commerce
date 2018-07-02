@@ -12,6 +12,9 @@ var toolbar = header.querySelectorAll("#toolbar>li");
 
 var filter_open_btn = document.getElementsByClassName("toolbar")[0];
 var filter_close_btn = document.getElementsByClassName("filter-close-btn")[0];
+
+var add_to_bag = document.getElementsByClassName("item-add-to-bag")[0];
+
 try{
 	filter_open_btn.onclick = function(){
 		if(!filter_open_btn.classList.contains('open')){
@@ -99,3 +102,85 @@ for(let i = 0; i < items.length; i++){
 
 	}
 }
+try{
+	add_to_bag.onclick = function(event){
+		event.preventDefault();
+
+		let item_photo = document.querySelector(".gallery-main img").src;
+		let item_title = document.getElementsByClassName("item-title")[0].innerText;
+		let item_price = document.getElementsByClassName("item-price")[0].innerText;
+		let item_size  = document.querySelector(".item-size .active").innerText;
+		let item_color = document.querySelector(".item-color .active").innerText;
+
+		let item_info = {
+			img: item_photo,
+			title: item_title,
+			price: item_price,
+			size: item_size,
+			color: item_color
+		};
+
+		localStorage.setItem(item_title, JSON.stringify(item_info));
+	}
+}catch(ex){
+
+}
+var bag_list = document.getElementById("bag_list");
+//var bag_item = document.createElement("li");
+//bag_item.innerText = "test";
+//bag_list.appendChild(bag_item);
+
+document.addEventListener("DOMContentLoaded", ready);
+function ready() {
+	try{
+		for(let i = 0; i < localStorage.length; i++){
+			let key = localStorage.key(i);
+			let item_data = JSON.parse(localStorage.getItem(key));
+			let bag_item = document.createElement("li");
+			let item_remove = document.createElement("button");
+			item_remove.classList.add("item-remove");
+			item_remove.innerText = "Remove item";
+
+			let item_photo = document.createElement("img")
+			item_photo.src = item_data.img;
+
+		 	let item_title = document.createElement("h2");
+		 	item_title.innerText = item_data.title; 
+
+			let item_price = document.createElement("span");
+			item_price.innerText = item_data.price;
+			item_price.classList.add("item-price");
+
+			let item_size  = document.createElement("span");
+			item_size.innerText = "Size: " + item_data.size;
+
+			let item_color = document.createElement("span"); 
+			item_color.innerText = "Color: " + item_data.color;
+
+			bag_list.appendChild(bag_item);
+
+			let info_column = document.createElement("div");
+			info_column.classList.add("item-info-column");
+			bag_item.appendChild(item_photo);
+			info_column.appendChild(item_title);
+			info_column.appendChild(item_price);
+			info_column.appendChild(item_size);
+			info_column.appendChild(item_color);
+			info_column.appendChild(item_remove);
+			bag_item.appendChild(info_column);
+
+		}
+		var item_remove_button = document.getElementsByClassName("item-remove");
+		for(let i = 0; i < item_remove_button.length; i++){
+			item_remove_button[i].onclick = function(event){
+				let key = this.parentNode.childNodes[0].innerText;
+				console.log(this.parentNode.parentNode.remove());
+				localStorage.removeItem(key);	
+			}
+		}
+	}catch(ex){ 
+
+	}
+
+}
+
