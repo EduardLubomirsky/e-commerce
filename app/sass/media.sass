@@ -110,8 +110,7 @@
 							padding-left: 0
 
 	.main-content
-		.banners
-			width: 100%
+		.banners .container
 			height: 253px
 			.banner .banner-title
 				font-size: 22px
@@ -187,24 +186,23 @@
 		.bag-list img
 			width: 145px
 			height: 205px
-	.footer-top
-		justify-content: space-between
-		.border
-			display: none
-		.questions
-			border-left: 1px solid transparent
-			margin-left: 0
-			flex-grow: 1
-		.inline
-			display: block	
+	.footer
 		.about-us p
-			visibility: hidden
-	.footer-bottom
-		font-size: 12px
-		.menu-settings
-			margin-left: 50px 
-			li
-				margin-right: 12px;
+			display: none
+		&-collumn
+			width: 0px
+			flex-grow: 2
+			border-right: 0
+			&:last-child
+				flex-grow: 1	
+				flex-direction: column
+				margin-left: 0px
+				flex-shrink: 0
+				.cell
+					width: 100%
+		&-bottom
+			.share
+				font-size: 16px
 @media screen and (max-width: 375px)
 	.header-top
 		margin-bottom: 0
@@ -248,11 +246,11 @@
 	.header .filter-wrapper .filter li
 		width: 50%
 	.main-content
-		.banners
-			width: 100%
+		.banners .container
 			height: 253px
 			margin-top: 0
 			.left
+				border: 0
 				width: 100%
 				background-position: center center
 				background-size: contain
@@ -331,35 +329,88 @@
 				font-size: 10px
 				line-height: 20px
 	.footer
-		&-top
-			display: block
-		.inline
-			display: flex
-			border-top: 1px solid #ccc
-			border-bottom: 1px solid #ccc
-		.question
-			flex-grow: 1
-			border-right: 1px solid #ccc
-		.order-by-phone
-			flex-grow: 1
-			margin-left: 20px
-		.inline-mobile
-			display: flex
-			
-		.social
+		border-top: 1px solid #e5e5e5
+		.links-header
+			font-size: 14px
+			font-family: 'Open Sans'
+		.links a
+			font-size: 12px
+			line-height: 40px
+		.about-us
 			display: none
-			font-size: 10px
-			li:nth-last-child(1)
-				margin-right: 0
-
-		&-bottom
-			font-size: 10px
+			width: 315px
+			font-family: 'Times New Roman'
+			font-style: italic
+			font-size: 16px
+			line-height: 30px
+			color: #757575
+		&-top .container
 			display: flex
-			flex-direction: column-reverse
-			align-items: flex-start
-			.menu-settings
-				margin-left: 0
+			flex-direction: column
+			flex-shrink: 0
+		&-collumn
+			width: 100%
+			position: relative
+			flex-shrink: 0
+			&::after
+				content: ""
+				position: absolute
+				width: 105.5%
+				height: 1px
+				left: -3%
+				bottom: 0
+				background: #e5e5e5
+			&:first-child 
+				flex-wrap: nowrap
+				.cell:last-child
+					margin-left: 40px
+					flex-shrink: 1
+
+
+			&:last-child
+				flex-direction: row
+				flex-wrap: nowrap
+				.links-header
+					margin: 10px 0
+				.cell
+					flex-shrink: 0
+					width: 50%
+					border-right: 1px solid #e5e5e5
+					&:nth-child(2)
+						border-right: 0
+						margin-left: 20px
+						flex-shrink: 1
+		&-bottom 
+			border-top: 0
+			line-height: 65px
+			font-size: 10px
+			.container
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-betwee
+				margin: 0
+			.copyright
+				font-weight: bold
+				order: 2
+			.service-navigation
+				position: relative
+				display: flex
+				justify-content: flex-start
+				font-weight: bold
+				order: 1
+				width: 100%
 				li
-					font-size: 10px
-					margin-right: 10px
-					letter-spacing: 0
+					margin-left: 20px
+					&:first-child
+						margin-left: 0
+				&::after
+					content: ""
+					position: absolute
+					width: 105.5%
+					height: 1px
+					left: -3%
+					bottom: 0
+					background: #e5e5e5
+			.share
+				order: 3
+				margin: 0

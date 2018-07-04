@@ -219,13 +219,16 @@ img
 			background-color: #f7f7f7
 	.banners
 		width: 100%
-		height: 386px
 		margin-top: 80px
+		border-top: 1px solid #e5e5e5
+		border-bottom: 1px solid #e5e5e5
+	.banners .container
+		height: 386px
 		.banner
 			background-repeat: no-repeat
 			background-size: contain
 			position: relative
-			border: 1px solid #e5e5e5
+			border-right: 1px solid #e5e5e5
 			box-sizing: border-box
 			width: 50%
 			height: 100%
@@ -253,7 +256,7 @@ img
 			background-image: url('../img/photo.png')
 			background-position: left bottom
 		.right
-			border-left-color: transparent
+			border: 0
 			background-image: url('../img/photo1.png')
 			background-position: left bottom
 	.banners-bottom
@@ -507,74 +510,66 @@ img
 			color: #f14a58
 			cursor: pointer
 .footer
-	box-sizing: border-box
-	font-family: 'Open Sans'
-	font-size: 14px
-	width: 100%
-
-	border-top: 1px solid #ccc
-	&-top
-		display: flex
-		justify-content: space-around
+	font-family: 'Roboto'
+	border-top: 1px solid #e5e5e5
+	display: flex
+	flex-direction: column
+	.links-header
+		font-size: 16px
+		font-family: 'Open Sans'
+		margin: 30px 0
+	.links a
+		font-size: 14px
 		line-height: 40px
-	.column 
-		h3
-			font-weight: 700
-			font-size: 16px
-	.inline-mobile
-		flex-grow: 2
-		display: flex
-		justify-content: space-around
-	.questions
-		border-left: 1px solid #ccc
-		margin-left: 59px
-		position: relative
-		flex-grow: 2
-	.inline
-		display: flex
-		justify-content: space-around
-
 	.about-us
-		position: absolute
+		width: 315px
 		font-family: 'Times New Roman'
 		font-style: italic
 		font-size: 16px
-		max-width: 325px
 		line-height: 30px
-		p
-			color: #757575
-		.social li
-			display: inline-block
-			margin-right: 25px			
-	&-bottom
-		height: 80px
+		color: #757575
+	&-top .container
 		display: flex
-		justify-content: space-between
-		align-items: center
-		font-weight: 700
-
+		flex-shrink: 0
+	&-collumn
+		box-sizing: border-box
+		width: 50%
+		display: flex
+		flex-wrap: wrap
+		flex-shrink: 0
+		border-right: 1px solid #e5e5e5
+		&:last-child
+			margin-left: 60px
+			flex-shrink: 1
+			border-right: 0
+			.links-header
+				margin-bottom: 0
+		.cell
+			width: 50%
+	&-bottom 
+		border-top: 1px solid #e5e5e5
+		font-size: 12px
+		.container
+			display: flex
+			justify-content: space-between
+			align-items: center
+			margin: 20px 0
+		.copyright
+			font-weight: bold
+			// width: 240px
 		.share
-			position: relative
-			&::before
-				content: ""
-				position: absolute
-				right: -10px
-				border: 7px solid transparent
-				border-right: 8px solid #ccc
-				width: 0
-				height: 0
-			&::after
-				content: "1437"
-				position: absolute
-				left: 45px
-				top: -5px
-				background: #ccc
-				padding: 5px
-   
-		.menu-settings 
+			border: 0
+			background: none
+			font-size: 18px
+			font-weight: bold
+			padding: 0
+			margin: 0 10px
+		.service-navigation
+			// width: 340px
+			display: flex
+			justify-content: flex-end
+			font-weight: bold
 			li
-				float: left
-				margin-right: 35px
-				&:last-child
-					margin-right: 0
-
+				margin-left: 30px
+				&:first-child
+					margin-left: 0
