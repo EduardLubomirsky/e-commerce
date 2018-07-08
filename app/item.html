@@ -14,12 +14,12 @@
 	<header class="header">
 		<div class="container">
 			<div class="header-top" id="header_top">
-				<a href="" class="logo">Template</a>
-				<a href="" class="logo-mobile">TL</a>
+				<a href="index.html" class="logo">Template</a>
+				<a href="index.html" class="logo-mobile">TL</a>
 				<div class="user-menu">
 					<a href="" class="email">email</a>
 					<a href="" class="sign-up">sign up</a>
-					<a href="" class="bag">Bag (0)</a>
+					<a href="chart.html" class="bag">Bag (0)</a>
 					<div class="hamburger" id="menu_button">
 						<span></span>
 						<span></span>
@@ -39,11 +39,11 @@
 						<li><a href="#">Clearance</a></li>
 						<li><a href="#">Store Locator</a></li>
 					</ul>
+					<form class="search">
+						<input type="search" name="q" placeholder="Style Name"> 
+						<input type="submit" value="" >
+					</form>
 				</nav>
-				<form class="search">
-					<input type="search" name="q" placeholder="Style Name"> 
-					<input type="submit" value="" >
-				</form>
 			</div>
 		</div>
 	</header>
@@ -70,16 +70,16 @@
 					<div class="item-filter-group">	
 						<h2>Size:</h2>
 						<ul class="item-size">
-							<li class="active"><button href="#">uk 52</button></li>
-							<li> <button>uk 54</button></li>
-							<li> <button>uk 56</button></li>
+							<li><button class="active size-filter-item">uk 52</button></li>
+							<li><button class="size-filter-item">uk 54</button></li>
+							<li><button class="size-filter-item">uk 56</button></li>
 						</ul>
 					</div>
 					<div class="item-filter-group">	
 						<h2>Color:</h2>
 						<ul class="item-color">
-							<li> <button>black</button></li>
-							<li class="active"><button>blue</button></li>
+							<li><button class="color-filter-item">black</button></li>
+							<li><button class="active color-filter-item">blue</button></li>
 						</ul>
 					</div>
 					<a href="#" class="item-add-to-bag button">Add to bag</a>

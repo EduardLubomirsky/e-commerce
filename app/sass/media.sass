@@ -1,9 +1,8 @@
 @media screen and (max-width: 768px)
 	.header
 		.header-bottom
-			max-width: 
+			position: relative
 			.menu-links
-				position: relative
 				padding-right: 15px
 				font-size: 12px
 				li
@@ -18,17 +17,17 @@
 		.filter-wrapper
 			position: relative
 			height: 70px
-			cursor: pointer
 			.filter-close-btn
 				position: absolute
 				right: 10px
 				top: 25px
-				display: block
+				display: none
 				width: 18px
 				height: 18px
 				border: 0
 				background-color: white
 				padding: 0
+				outline: 0
 			.filter-close-btn span
 				position: absolute
 				top: 8px
@@ -42,6 +41,7 @@
 				transform: rotate(-45deg)
 			.filter-close-btn::before
 				content: ""
+				outline: none
 				position: absolute
 				top: 0
 				left: -70px
@@ -110,6 +110,9 @@
 							padding-left: 0
 
 	.main-content
+		.button
+			padding: 10px 40px
+			max-width: 250px
 		.banners .container
 			height: 253px
 			.banner .banner-title
@@ -186,6 +189,14 @@
 		.bag-list img
 			width: 145px
 			height: 205px
+		.reminder
+			font-size: 11px
+		.buy 
+			padding: 0 20px
+			.total-cost
+				font-size: 16px
+			.buy-now-btn
+				font-size: 16px
 	.footer
 		.about-us p
 			display: none
@@ -217,35 +228,47 @@
 			display: inline
 		.hamburger
 			display: inline-block !important
-		.search
-			display: block	
-			&.expand [type="search"]
+	.header
+		&-top
+		.header-bottom 
+			margin: 0
+			padding: 0
+			position: relative
+			.menu
+				flex-direction: column
+				position: fixed
+				left: -120%
+				width: 100%
+				height: calc(100% - 70px)
+				overflow: auto
+				background-color: white
+				transition: .5s;
+				z-index: 1000
+			.menu.open
+				left: 0
+			& .menu-links
 				display: block
-	.header-bottom 
-		margin: 0
-		padding: 0
-		.menu
-			position: fixed
-			left: -120%
-			height: 100%
-			background-color: white
-			transition: .3s;
-		.menu.open
-			width: 100%
-			z-index: 1000
-		& .menu-links
-			width: 100%
-			display: block
-			padding: 0 10px 0 10px
-			li
-				margin-bottom: 30px
-				font-size: 24px
-		& .menu.open 
-			left: 0	
+				padding: 0 10px 0 10px
+				li
+					margin-bottom: 30px
+					font-size: 24px
+			.search
+				position: relative
+				width: 150px
+				margin: 15px 0
+				margin-left: 10px
+
+				& [type="search"]
+					display: block
+				& [type="submit"]
+					position: absolute
 
 	.header .filter-wrapper .filter li
 		width: 50%
 	.main-content
+		.button
+			padding: 10px 20px
+			max-width: 200px
 		.banners .container
 			height: 253px
 			margin-top: 0
@@ -284,7 +307,6 @@
 				font-size: 18px
 				max-width: 220px
 				max-height: 62px
-				line-height: 62px
 				margin-top: 65px
 		.products-list .items .item 
 			width: 45%
@@ -328,6 +350,17 @@
 			span
 				font-size: 10px
 				line-height: 20px
+		.reminder
+			font-size: 10px
+		.buy
+			.bag-is-empty
+				font-size: 10px
+			.btn-buy-now
+				font-size: 18px
+			.total-wrapper
+				font-size: 10px
+			.total-cost
+				font-size: 14px
 	.footer
 		border-top: 1px solid #e5e5e5
 		.links-header

@@ -14,23 +14,33 @@ var filter_open_btn = document.getElementsByClassName("toolbar")[0];
 var filter_close_btn = document.getElementsByClassName("filter-close-btn")[0];
 
 var add_to_bag = document.getElementsByClassName("item-add-to-bag")[0];
+var bag_button = document.getElementsByClassName("bag")[0];
+var bag_list = document.getElementById("bag_list");
+var bag_empty = document.getElementsByClassName("bag-is-empty")[0];
 
+var size_button = document.getElementsByClassName("size-filter-item");
+var color_button = document.getElementsByClassName("color-filter-item");
+
+var total_cost = document.getElementsByClassName("total-cost")[0];
+//Открытие, закрытие фильтра
 try{
 	filter_open_btn.onclick = function(){
 		if(!filter_open_btn.classList.contains('open')){
 			filter_open_btn.classList.add('open');
-		}else{
-			filter_open_btn.classList.remove('open');
+			filter_close_btn.style = "display: block";
 		}
 	}
-	filter_close_btn.onclick = function(){
+	filter_close_btn.onclick = function(evt){
+		evt.preventDefault();
 		if(filter_open_btn.classList.contains('open')){
 			filter_open_btn.classList.remove('open');
+			filter_close_btn.style = "display: none";
 		}
 	}
 }catch(err){
 
 }
+//Разворачивает и сворачивает форму поиска на таблетках
 search_button.onclick = function(event){
 	event.preventDefault();
 	if(search_form.classList.contains('expand')){
@@ -39,15 +49,20 @@ search_button.onclick = function(event){
 		search_form.classList.add('expand');
 	}
 }
+//Меню 
 menu_button.onclick = function(){
 	if(menu.classList.contains('open')){
 		menu.classList.remove('open');
 		menu_button.classList.remove('open');
+		document.body.classList.remove("no-scroll");
 	}else{
 		menu.classList.add('open');
 		menu_button.classList.add('open');
+		document.body.classList.add("no-scroll");
+		menu.style = "overflow: auto";
 	}
 }
+//Логика для фильтра
 for(let i = 0; i < filter_title.length; i++){
 	filter_title[i].onclick = function(){	
 		if(this.classList.contains('open')){
@@ -77,8 +92,6 @@ for(let i = 0; i < items.length; i++){
 		} else{
 			for(let j = 1; j < itemsChildNodes.length; j+=2){
 				this.childNodes[j].classList.remove('selected');
-				//console.log(this.childNodes[j].innerText)
-
 			}
 			event.target.classList.add('selected');
 		}
@@ -93,19 +106,18 @@ for(let i = 0; i < items.length; i++){
 						toolbar[t].childNodes[0].classList.remove("select");
 					} 
 				}
-				//else{
-				//	toolbar[t].childNodes[0].innerText = filter_title[t].childNodes[0].data;
-				//}
 			}
 
 		}
 
 	}
 }
+//----------------------------------------
+//Добавляет запись в localstorage
 try{
 	add_to_bag.onclick = function(event){
 		event.preventDefault();
-
+		bag_button.innerText = "Bag ("+localStorage.length+")";
 		let item_photo = document.querySelector(".gallery-main img").src;
 		let item_title = document.getElementsByClassName("item-title")[0].innerText;
 		let item_price = document.getElementsByClassName("item-price")[0].innerText;
@@ -121,16 +133,28 @@ try{
 		};
 
 		localStorage.setItem(item_title, JSON.stringify(item_info));
+		bag_button.innerText = "Bag ("+localStorage.length+")";
 	}
 }catch(ex){
 
 }
-var bag_list = document.getElementById("bag_list");
+
 //var bag_item = document.createElement("li");
 //bag_item.innerText = "test";
 //bag_list.appendChild(bag_item);
-
+bag_button.innerText = "Bag ("+localStorage.length+")";
+//Суммируем все элементы корзины и выводим конечную сумму
+var total_amount = function(){
+	var total = 0;
+	for(let i = 0; i < localStorage.length; i++){
+		let key = localStorage.key(i);
+		let item_data = JSON.parse(localStorage.getItem(key));
+		total += +item_data.price.substring(1)
+	}
+	return total;
+}
 document.addEventListener("DOMContentLoaded", ready);
+//Функция отрисовки всех данных с localstorage
 function ready() {
 	try{
 		for(let i = 0; i < localStorage.length; i++){
@@ -144,8 +168,8 @@ function ready() {
 			let item_photo = document.createElement("img")
 			item_photo.src = item_data.img;
 
-		 	let item_title = document.createElement("h2");
-		 	item_title.innerText = item_data.title; 
+			let item_title = document.createElement("h2");
+			item_title.innerText = item_data.title; 
 
 			let item_price = document.createElement("span");
 			item_price.innerText = item_data.price;
@@ -176,11 +200,33 @@ function ready() {
 				let key = this.parentNode.childNodes[0].innerText;
 				console.log(this.parentNode.parentNode.remove());
 				localStorage.removeItem(key);	
+				bag_button.innerText = "Bag ("+localStorage.length+")";
+				total_cost.innerText = "£"+total_amount();
 			}
 		}
+		total_cost.innerText = "£"+total_amount();
 	}catch(ex){ 
 
 	}
 
 }
 
+//Фильтры по цвету и по размеру на странице item.html
+for(let i = 0; i < size_button.length; i++){
+	size_button[i].onclick = function(evt){
+		evt.preventDefault();
+		for(let j = 0; j < size_button.length; j++){
+			size_button[j].classList.remove('active')
+		}
+		this.classList.add('active');	
+	}
+}
+for(let i = 0; i < color_button.length; i++){
+	color_button[i].onclick = function(evt){
+		evt.preventDefault();
+		for(let j = 0; j < color_button.length; j++){
+			color_button[j].classList.remove('active')
+		}
+		this.classList.add('active');	
+	}
+}
