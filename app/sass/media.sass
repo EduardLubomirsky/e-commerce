@@ -10,10 +10,19 @@
 			.search
 				position: absolute
 				right: 0px
+				&.expand::before
+					content: ""
+					position: absolute
+					left: -80px
+					background: linear-gradient(to right, transparent, #fff);
+					width: 80px
+					height: 20px
 				& [type="search"]
 					display: none	
 				&.expand [type="search"]
 					display: block
+
+	.main-content
 		.filter-wrapper
 			position: relative
 			height: 70px
@@ -108,8 +117,6 @@
 							line-height: 25px
 						li:nth-child(1)
 							padding-left: 0
-
-	.main-content
 		.button
 			padding: 10px 40px
 			max-width: 250px
@@ -257,7 +264,6 @@
 				width: 150px
 				margin: 15px 0
 				margin-left: 10px
-
 				& [type="search"]
 					display: block
 				& [type="submit"]

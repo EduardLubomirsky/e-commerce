@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title>Catalog</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" type="text/css" href="libs/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="libs/slick/slick-theme.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700" rel="stylesheet">
 </head>
 <body>
 	<header class="header">
 		<div class="container">
 			<div class="header-top" id="header_top">
-				<a href="" class="logo">Template</a>
-				<a href="" class="logo-mobile">TL</a>
-				<div class="position-right">
+				<a href="index.html" class="logo">Template</a>
+				<a href="index.html" class="logo-mobile">TL</a>
+				<div class="user-menu">
 					<a href="" class="email">email</a>
 					<a href="" class="sign-up">sign up</a>
-					<a href="" class="bag">Bag (0)</a>
+					<a href="chart.html" class="bag">Bag (0)</a>
 					<div class="hamburger" id="menu_button">
 						<span></span>
 						<span></span>
@@ -34,18 +38,20 @@
 						<li><a href="#">New Arrivals</a></li>
 						<li><a href="#">Clearance</a></li>
 						<li><a href="#">Store Locator</a></li>
-						<li>
-							<form class="search">
-								<input type="search" name="q" placeholder="Style Name"> 
-								<input type="submit" value="" >
-							</form>
-						</li>	
 					</ul>
+					<form class="search">
+						<input type="search" name="q" placeholder="Style Name"> 
+					<input type="submit" value="" >
+				</form>
 				</nav>
 			</div>
 		</div>	
 		<div class="filter-wrapper">
 			<div class="container">
+				<button class="filter-close-btn">
+					<span></span>
+					<span></span>
+				</button>
 				<ul class="toolbar" id="toolbar">
 					<li><span class="title">Fashion</span><span class="selected"></span></li>
 					<li><span class="title">Product type</span><span class="selected"></span></li>
@@ -129,75 +135,100 @@
 	<main class="main-content">
 		<section class="products-list">
 			<div class="container hidden">
-				<div class="items">
-					<div class="item">
-						<img src="img/item1.png" alt="">
-						<span class="name">Staight Leg Jeans</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item2.png" alt="">
-						<span class="name">Boyfriend T-Shirt with Bohemian Print</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item3.png" alt="">
-						<span class="name">Only Busted Knee Jean</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item4.png" alt="">
-						<span class="name">Only Skinny Jeans</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item1.png" alt="">
-						<span class="name">Staight Leg Jeans</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item2.png" alt="">
-						<span class="name">Boyfriend T-Shirt with Bohemian Print</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item3.png" alt="">
-						<span class="name">Only Busted Knee Jean</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item4.png" alt="">
-						<span class="name">Only Skinny Jeans</span>
-						<span class="price">£55.00</span>
-					</div>
-				</div>
+				<ul class="items">
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item1.png" alt="">
+							<span class="name">Staight Leg Jeans</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item2.png" alt="">
+							<span class="name">Boyfriend T-Shirt with Bohemian Print</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item3.png" alt="">
+							<span class="name">Only Busted Knee Jean</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item4.png" alt="">
+							<span class="name">Only Skinny Jeans</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item1.png" alt="">
+							<span class="name">Staight Leg Jeans</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item2.png" alt="">
+							<span class="name">Boyfriend T-Shirt with Bohemian Print</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item3.png" alt="">
+							<span class="name">Only Busted Knee Jean</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item4.png" alt="">
+							<span class="name">Only Skinny Jeans</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+				</ul>
 				<div class="ad">
 					<h2>Last weekend <strong>extra 50%</strong> off on all reduced boots and shoulder bags</h2>
 					<span>This offer is valid in-store and online. Prices displayed reflect this additional discount. This offer ends at 11:59 GMT on March 1st 2015</span>
 				</div>
-				<div class="items">
-					<div class="item">
-						<img src="img/item1.png" alt="">
-						<span class="name">Staight Leg Jeans</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item2.png" alt="">
-						<span class="name">Boyfriend T-Shirt with Bohemian Print</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item3.png" alt="">
-						<span class="name">Only Busted Knee Jean</span>
-						<span class="price">£55.00</span>
-					</div>
-					<div class="item">
-						<img src="img/item4.png" alt="">
-						<span class="name">Only Skinny Jeans</span>
-						<span class="price">£55.00</span>
-					</div>
-				</div>
+				<ul class="items">
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item1.png" alt="">
+							<span class="name">Staight Leg Jeans</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item2.png" alt="">
+							<span class="name">Boyfriend T-Shirt with Bohemian Print</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item3.png" alt="">
+							<span class="name">Only Busted Knee Jean</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="item.html">
+							<img src="img/item4.png" alt="">
+							<span class="name">Only Skinny Jeans</span>
+							<span class="price">£55.00</span>
+						</a>
+					</li>
+				</ul>
 			</div>
+			<a href="#" class="btn-show-all button">Show more</a>
 		</section>
 		<section class="banners-bottom">
 
@@ -227,60 +258,62 @@
 		</section>
 	</main>	
 	<footer class="footer">
-		<div class="container">
-			<div class="footer-top">
-				<div class = "inline-mobile">
-					<div class="column quick-links">
-						<h3 class="quick-links-header">Quick Links</h3>
-						<ul>
-							<li>Store locator</li>
-							<li>Gift cards</li>
-							<li>Size guide</li>
-							<li>About us</li>
-							<li>Support</li>
+		<div class="footer-top">
+			<div class="container">	
+				<div class="footer-collumn">
+					<div class="cell">			
+						<h3 class="links-header">Quick Links</h3>
+						<ul class="links">
+							<li><a href="#">Store locator</a></li>
+							<li><a href="#">Gift cards</a></li>
+							<li><a href="#">Size guide</a></li>
+							<li><a href="#">About us</a></li>
+							<li><a href="#">support</a></li>
 						</ul>
 					</div>
-					<div class="column customer-care">
-						<h3 class="customer-care-header">Customer Care</h3>
-						<ul class="customer-care">
-							<li>Customer service</li>
-							<li>Track my order</li>
-							<li>Return policy</li>
-							<li>Shipping & delivery</li>
-							<li>Contact us</li>
-							<li>Careers</li>
+					<div class="cell">
+						<h3 class="links-header">Customer Care</h3>
+						<ul class="links">
+							<li><a href="#">Customer service</a></li>
+							<li><a href="#">Track my order</a></li>
+							<li><a href="#">Return policy</a></li>
+							<li><a href="#">Shipping & delivery</a></li>
+							<li><a href="#">Contact us</a></li>
+							<li><a href="#">Careers</a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="border"></div>
-				<div class="column questions">
-					<div class="inline">
-						<div class="question">
-							<h3 class="questions-header">Questions</h3>
-							<p class="link"><i class="fab fa-twitter"></i> Tweet us <a href="#">@template</a></p>
-							<div class="about-us">
-								<p>We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.</p>
-								<ul class="social">
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="order-by-phone">
-							<h3 class="quick-links-header">Order by phone</h3>
-							<p class="number">8-800-409-47-12</p>
-						</div>
+				<div class="footer-collumn">
+					<div class="cell">
+						<h3 class="links-header">Questions</h3>
+						<ul class="links">
+							<li><a href="#">Tweet us <b>@template</b></a></li>
+						</ul>
+					</div>
+					<div class="cell">
+						<h3 class="links-header">Order by phone</h3>
+						<ul class="links">
+							<li><a href="#">8-800-409-47-12</a></li>
+						</ul>
+					</div>
+					<div class="about-us">
+						<p>We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.</p>
+						<ul class="social-links">
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="footer-bottom">
-				<p class="copyright">© 2010–2015, The Template Group inc.</p>
-
-				<a href="#" class="share">Share</a>	
-				<ul class="menu-settings">
-					<li>Legal notice</li>
-					<li>Privacy policy</li>
-					<li>Site map</li>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<span class="copyright">© 2010–2015, The Template Group inc.</span>
+				<button class="share">Share</button>
+				<ul class="service-navigation">
+					<li><a href="#">Legal notice</a></li>
+					<li><a href="#">Privacy policy</a></li>
+					<li><a href="#">Site map</a></li>
 				</ul>
 			</div>
 		</div>
