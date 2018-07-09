@@ -5,10 +5,10 @@ var menu_button = document.getElementById("menu_button");
 var menu = document.getElementById("main_menu");
 
 var header= document.querySelector("header");
-var filter_title = header.querySelectorAll("#filter_title>li");
-var items = header.querySelectorAll(".items");
-var selected_item_name = header.querySelectorAll("span.selected-item-name");
-var toolbar = header.querySelectorAll("#toolbar>li");
+var filter_title = document.querySelectorAll("#filter_title>li");
+var items =document.querySelectorAll(".items");
+var selected_item_name = document.querySelectorAll("span.selected-item-name");
+var toolbar = document.querySelectorAll("#toolbar>li");
 
 var filter_open_btn = document.getElementsByClassName("toolbar")[0];
 var filter_close_btn = document.getElementsByClassName("filter-close-btn")[0];
