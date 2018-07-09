@@ -204,7 +204,9 @@ img {
   font-family: 'Open Sans';
   font-weight: 700; }
   .main-content .filter-wrapper .filter-close-btn {
-    display: none; }
+    display: none;
+    background: 0;
+    border: 0; }
   .main-content .filter-wrapper .toolbar {
     display: none;
     white-space: nowrap; }
@@ -220,8 +222,6 @@ img {
       .main-content .filter-wrapper .filter li.open ul {
         border-top: 1px solid transparent; }
     .main-content .filter-wrapper .filter > li.selected {
-      padding-top: 10px;
-      padding-bottom: 20px;
       font-size: 12px; }
       .main-content .filter-wrapper .filter > li.selected .selected-item-name {
         display: block;

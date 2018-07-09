@@ -308,7 +308,7 @@
         display: block; }
       .header .header-bottom .search [type="submit"] {
         position: absolute; }
-  .header .filter-wrapper .filter li {
+  .main-content .filter-wrapper .filter li {
     width: 50%; }
   .main-content .button {
     padding: 10px 20px;
