@@ -4,8 +4,7 @@ The project includes 4 pages:
 2. catalog.html
 3. item.html 
 4. chart.html
-All pages adaptive.
-You can see works 
+All pages are adaptive.
 
-you can see the work of this project by link:
+You can see the work of this project by link:
 https://eduardlubomirsky.github.io/e-commerce/app/index.html
